@@ -1,0 +1,11 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - pics/**
+
+
+
+format:
+  revealjs:
+    theme: simple
