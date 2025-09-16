@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -106,6 +135,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Stellt euch vor, ihr könntet euch auf die Größe eines Atoms schrumpfen lassen - selbst die Oberfläche eines Eiswürfels würde für euch aussehen wie eine Berglandschaft mit Tälern und Gipfeln. Jetzt versteht ihr auch, warum manche Oberflächen rauer erscheinen als andere. Ein Stück Sandpapier fühlt sich rau an, weil die Unebenheiten so groß sind, dass wir sie spüren können, aber auch scheinbar glatte Materialien haben diese mikroskopischen Unebenheiten.</p>
 <p>Wenn sich nun zwei Körper gegeneinander bewegen - nehmen wir als Beispiel eure Hand, die über den Tisch gleitet - dann kommt es durch die Atome zu einer <strong>“Verzahnung”</strong> der aneinander liegenden <strong>Flächen</strong>. Denkt euch das wie zwei Sägezähne vor, die ineinander greifen, nur eben auf allerkleinster Ebene. Aber bedenkt, dass es nur eine Bildhafte Vorstellung ist. Es geht um Wechselwirkungen, also auch Kräfte, auf Atomarer Ebene, deren Ursache wir eben nicht mit blossem Auge erkennen können oder nicht einfach so erleben können. Im Gegensatz dazu können wir uns denken, dass zwei Bürsten gegeneinander geschoben mit ihren Bürstenhaaren wechselwirken würden. Oder eben den Unterschied zwischen Jeans und einem Seidenhemd. Da wissen wir wie sich das anfühlt.</p>
 <p>Und nachdem wir <strong>“Verzahnung”</strong> der aneinander liegenden <strong>Flächen</strong> ausgefüllt haben geht’s weiter. Diese winzigen Erhebungen und Vertiefungen haken sich sozusagen ineinander ein und bremsen die Bewegung ab. Hier ist etwas ganz Wichtiges zu beachten, und das solltet ihr euch merken: Reibung wirkt immer - und hier könnt ihr wieder eine Lücke füllen - immer <strong>entgegengesetzt</strong> zur <strong>Bewegungsrichtung</strong>. Das ist ein fundamentales Prinzip. Wenn ihr versucht, euer Handy über den Tisch zu schieben, dann zeigt die Reibungskraft genau in die entgegengesetzte Richtung zu der, in die ihr das Handy bewegen wollt. Deshalb müsst ihr Kraft aufwenden, um Gegenstände zu bewegen.</p>
+<p>Wir zeichnen hier im Bild zwei Kräfte ein. Die <strong>Zugkraft</strong> <span class="math inline">\(F_{Zug}\)</span>, die nach rechts zeigt, denn der Körper wird nach rechts gezogen. Und die <strong>Reibungskraft</strong> <span class="math inline">\(F_R\)</span> die eben entgegengesetzte Richtung zeigt, also nach links.</p>
 <p>Aber von was hängt die Reibung eigentlich ab? Das ist wichtig zu verstehen, denn je nach Situation kann man die Reibung beeinflussen. Der erste Faktor ist die <strong>Beschaffenheit</strong> der aneinander liegenden Flächen. Hier ist die nächste Lücke für euer Arbeitsblatt: Je <strong>rauer</strong> die Oberflächen, desto <strong>größer</strong> ist die Reibung. Das leuchtet ein, oder? Wenn ihr mit euren Turnschuhen auf einem Basketballplatz lauft, habt ihr guten Halt, weil sowohl die Schuhsohle als auch der Hallenboden eine gewisse Rauheit haben. Versucht dasselbe mal auf einer Eisfläche - da ist die Oberfläche sehr glatt, die Reibung gering, und ihr rutscht weg. Ein interessantes Beispiel aus dem Sport: Kletterer verwenden oft Magnesia, eine Art Pulver, das die Hände trocknet und die Oberfläche rauer macht. Dadurch erhöhen sie die Reibung zwischen ihren Händen und dem Fels und können besser greifen. Umgekehrt verwenden Schwimmer manchmal spezielle Anzüge, die die Oberfläche ihres Körpers glätten, um die Reibung mit dem Wasser zu reduzieren und schneller zu schwimmen.</p>
 <p>Der zweite wichtige Faktor ist die <strong>Gewichtskraft</strong> des Körpers. Auch hier könnt ihr eine Lücke ausfüllen: Je <strong>größer</strong> die <strong>Gewichtskraft</strong>, desto <strong>größer</strong> ist die <strong>Reibung</strong>. Das könnt ihr selbst ausprobieren. Legt ein Buch auf den Tisch und schiebt es weg - das geht relativ leicht. Stapelt nun drei oder vier Bücher aufeinander und versucht es nochmal. Viel schwerer, nicht wahr? Das liegt daran, dass das größere Gewicht die Oberflächen stärker zusammendrückt, wodurch die Atome noch stärker miteinander verzahnen und die Reibung steigt.</p>
 <p>Hier ist etwas Überraschendes, das viele Leute falsch vermuten: Die Reibung hängt nicht von der Größe der reibenden Flächen ab! Das klingt erst mal komisch, aber es stimmt. Ob ihr ein Buch flach oder hochkant über den Tisch schiebt, macht keinen Unterschied für die Reibung - solange das Gewicht gleich bleibt. Das liegt daran, dass bei einer kleineren Auflagefläche der Druck pro Flächeneinheit höher wird, was den Effekt der kleineren Fläche wieder ausgleicht.</p>
