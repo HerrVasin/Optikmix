@@ -1,5 +1,5 @@
 ---
-title: "reibung"
+title: "Reibung"
 format: html
 editor: visual
 ---
